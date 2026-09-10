@@ -3,22 +3,26 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Laboratorium AR - Projekt Studencki</title>
-    <!-- Import bibliotek AR bezpośrednio z bezpiecznej chmury CDN -->
+    
+    <!-- Prawidłowy import biblioteki graficznej A-Frame -->
     <script src="https://aframe.io"></script>
+    
+    <!-- Prawidłowy import silnika AR.js do wykrywania kamery i znacznika -->
     <script src="https://githack.com"></script>
   </head>
   
   <body style="margin: 0px; overflow: hidden;">
+    <!-- Inicjalizacja sceny AR powiązanej z aparatem telefonu -->
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" renderer="colorManagement: true;">
       
-      <!-- Sekcja ASSETS: Serwer pobiera plik model.glb z tego samego folderu GitHub -->
+      <!-- Sekcja ASSETS: Ładowanie Twojego modelu 3D z tego samego folderu na GitHubie -->
       <a-assets>
         <a-asset-item id="moj-model" src="model.glb"></a-asset-item>
       </a-assets>
 
-      <!-- Wyzwalacz sceny: ustawiony na uniwersalny wzorzec (preset="hiro") -->
+      <!-- Wyzwalacz: standardowy i uniwersalny znacznik HIRO -->
       <a-marker preset="hiro">
-        <!-- Wyświetlenie i animacja modelu 3D pobranego ze Spline -->
+        <!-- Wyświetlenie i animacja obrotu modelu 3D pobranego ze Spline -->
         <a-gltf-model 
           src="#moj-model" 
           position="0 0.5 0" 
@@ -27,10 +31,8 @@
         </a-gltf-model>
       </a-marker>
       
-      <!-- Wirtualne oświetlenie, aby model zachował kolory ze Spline -->
+      <!-- Dodanie wirtualnej kamery AR - niezbędne do poprawnego renderowania -->
       
-      
-
       
     </a-scene>
   </body>
